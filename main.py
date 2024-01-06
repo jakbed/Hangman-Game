@@ -1,64 +1,11 @@
 import random
+from hangman_art import stages, logo
+from hangman_words import word_list
 
-word_list = ["floord", "christmas", "icebraker"]
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-chosen_word = list(random.choice(word_list))
+print(logo)
+print("")
+word = random.choice(word_list)
+chosen_word = list(word)
 lives = 6
 display = ["_" for _ in chosen_word]
 
@@ -70,12 +17,13 @@ while "_" in display and lives > 0:
                 display[i] = guess
     else:
         lives -= 1
-        print(stages[lives+1])
-    
+        print(stages[lives])
+    print("")
     print(display)
 
 if not "_" in display:
     print("Congratulations! You win!\n")
 else:
     print(stages[0])
-    print("You lose, try again.")
+    print("Your word was: " + word + "\n")
+    print("You lose, try again. \n")
