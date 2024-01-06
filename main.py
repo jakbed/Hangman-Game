@@ -1,6 +1,6 @@
 import random
 
-word_list = ["aardvark", "baboon", "camel"]
+word_list = ["floord", "christmas", "icebraker"]
 stages = ['''
   +---+
   |   |
@@ -73,9 +73,9 @@ while "_" in display and lives > 0:
         print(stages[lives+1])
     
     print(display)
-a
+
 if not "_" in display:
-    print("You win!")
+    print("Congratulations! You win!\n")
 else:
     print(stages[0])
     print("You lose, try again.")
